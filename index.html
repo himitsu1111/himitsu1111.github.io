@@ -1,0 +1,194 @@
+<!DOCKTYPE html >
+
+<link rel="stylesheet" href="c1.css">
+<meta >
+<TITLE>
+My form
+</TITLE>
+
+<p id="post1">My form #1</p>
+
+
+<FORM class="contact_form" action="" method="post" name="form1">
+
+
+<ul>
+ <!-- номер сотрудника -->
+  <li>
+
+    <label for="num">Номер сотрудника</label>
+
+    <input id="editNumId" type="text" name="num" />
+	<!--
+		Скрипт по заданию 2
+	-->
+	<script>
+		document.getElementById("editNumId").onkeypress = function() {
+		//alert(this.value);
+			if (isNaN(this.value)) {
+				alert("Введите цифру, а не " + this.value);
+			}
+		};
+	</script>
+	   <!-- кнопка подтверждения -->
+	<button class="submitNumber" type="submit">ввести номер</button>
+  </li>
+  <li>
+    <label for="name">Имя сотрудника</label>
+    <input id="editNameId" type="text" name="nameEdit" value="например, Иванов" >
+	<!--
+		Скрипт по заданию 1 и заданию 4 (функция goMail)
+	-->
+	<script>
+		/*
+		document.getElementById("editNameId").onfocus = function() {
+			if (document.getElementById("editNameId").value == "например, Иванов")
+				document.getElementById("editNameId").value = "";
+				
+			};
+		document.getElementById("editNameId").onblur = function() {
+			if (document.getElementById("editNameId").value == "")  
+				document.getElementById("editNameId").value = "например, Иванов";
+				
+			};
+			*/
+		function goMail() {
+			
+			//window.event.returnValue = false;
+			var v = document.getElementById("editNameId").value;
+			document.cookie="cook=" + v + "; path=/";
+			document.location.href="3.html";
+			alert(document.cookie);
+		}
+			
+	</script>
+	<button class="submitName" type="submit" onclick="goMail()">ввести имя</button>
+
+  </li>
+  <li>
+    <button class="submit1" type="submit">Все сотрудники</button>
+  </li>
+  <a href="http://ya.ru" class="global">новый сотрудник</a>
+  <!-- начинаются таблицы -->
+</ul>  
+	<table bgcolor='#00ff99'  cellpadding='0' cellspacing='4' border='1' bordercolor='#ffff00' align='center' name="tab1">
+		<tr name="test" id='tr0' height='50' bgcolor='#ffffff' valign=top align=center >
+			<td><label></label> </td>
+			<td><label>номер сотрудника</label> </td>
+			<td><label>имя сотрудника</label> </td>
+			<td><label>должность сотрудника</label> </td>
+			<td><label>дата трудоустройства</label> </td>
+			<td><label>департамент</label> </td>
+			<td><label>удалить</label> </td>
+		</tr>
+		<tr id='tr1' height='50'  width='30%' bgcolor='#ffffff' valign=top align=center>
+		<td> <label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>000</label> </td>
+			<td id="cellName"><label>Джуниор Хайнс</label> </td>
+			<td><label>старший программист</label></td>
+			<td id="cellDate"><label>10.11.2011</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr1)">удалить</a> </td>
+		</tr>
+		<tr id='tr2' height='50'  width='30%' bgcolor='#ffffff' valign=top align=center>
+		<td> <label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>001</label> </td>
+			<td id="cellName"><label>Джозеф Берри</label> </td>
+			<td><label>программист</label> </td>
+			<td id="cellDate"><label>05.05.2013</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr2)">удалить</a> </td>
+		</tr>
+		<tr id='tr3' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>002</label> </td>
+			<td id="cellName"><label>Джастин Конли</label> </td>
+			<td><label>старший тестеровщик</label> </td>
+			<td id="cellDate"><label>25.07.2014</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr3)">удалить</a> </td>
+		</tr>
+		<tr id='tr4' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>003</label> </td>
+			<td id="cellName"><label>Барри Робинсон</label> </td>
+			<td><label>программист</label> </td>
+			<td id="cellDate"><label>12.06.2010</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr4)">удалить</a> </td>
+		</tr>
+		<tr id='tr5' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>004</label> </td>
+			<td id="cellName"><label>Джошуа Уэйд</label> </td>
+			<td><label>тестеровщик</label> </td>
+			<td id="cellDate"><label>09.02.2015</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr5)">удалить</a> </td>
+		</tr>
+		<tr id='tr6' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>005</label> </td>
+			<td id="cellName"><label>Ричард Хорн</label> </td>
+			<td><label>программист</label> </td>
+			<td id="cellDate"><label>20.01.2013</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr6)">удалить</a> </td>
+		</tr>
+		<tr id='tr7' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>006</label> </td>
+			<td id="cellName"><label>Эмили Лэйн</label> </td>
+			<td><label>тестеровщик</label> </td>
+			<td id="cellDate"><label>11.05.2014</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr7)">удалить</a> </td>
+		</tr>
+		<tr id='tr8' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>007</label> </td>
+			<td id="cellName"><label>Кэтрин Уилкинс</label> </td>
+			<td><label>тестеровщик</label> </td>
+			<td id="cellDate"><label>22.05.2014</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr8)">удалить</a> </td>
+		</tr>
+		<tr id='tr9' height='50' bgcolor='#ffffff' valign=top align=center>
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>008</label> </td>
+			<td id="cellName"><label>Ховард Андервуд</label> </td>
+			<td><label>программист</label> </td>
+			<td id="cellDate"><label>26.09.2015</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="2.html" class="dellInTable">удалить</a> </td>
+		</tr>
+		<tr id='tr10' name="tr1" height='50' bgcolor='#ffffff' valign=top align=center >
+			<td><label><input type="checkbox" id="cbox1" value="first_checkbox"></label> </td>
+			<td id="cellNumber"><label>009</label> </td>
+			<td id="cellName"><label>Роланд Стрикленд</label> </td>
+			<td><label>программист</label> </td>
+			<td id="cellDate"><label>03.11.2015</label> </td>
+			<td><label>ИТ</label> </td>
+			<td><a href="#" class="dellInTable" onClick="hideRow(tr10)">удалить</a> </td>
+		</tr>
+	</table>
+	<!--
+		Скрипт по заданию 3
+	-->
+<script>
+	function hideRow(e) {
+		//alert(e);
+		if (confirm("Удалить?")) 
+			e.style.display = 'none';
+		
+			
+		//http://jsfiddle.net/GqS7W/
+	}
+	
+</script>
+
+
+</FORM>
+
+
+
