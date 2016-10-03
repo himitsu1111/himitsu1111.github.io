@@ -23,7 +23,7 @@ My form
 		—крипт по заданию 2
 	-->
 	<script>
-		document.getElementById("editNumId").onkeypress = function() {
+		document.getElementById("editNumId").onchange = function() {
 		//alert(this.value);
 			if (isNaN(this.value)) {
 				alert("¬ведите цифру, а не " + this.value);
@@ -54,9 +54,10 @@ My form
 			
 		function goMail() {
 			
-			//window.event.returnValue = false;
+			
 			var v = document.getElementById("editNameId").value;
 			document.cookie="cook=" + v + "; path=/";
+			window.event.returnValue = false;
 			document.location.href="3.html";
 			//alert(document.cookie);
 		}
