@@ -1,0 +1,13 @@
+﻿#post1 { 
+	font: bold italic 250% serif; 
+}
+#cellName, #cellNumber, #cellDate {
+	
+	vertical-align: middle;
+	//padding: 10px;
+	
+}
+.submit1{
+	color: #226fbe;
+	background-color: RGB(249, 201, 16);
+}
