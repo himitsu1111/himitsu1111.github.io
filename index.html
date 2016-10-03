@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="c1.css">
-<meta charset="windows-1251">
+<meta charset="utf-8">
 <TITLE>
 My form
 </TITLE>
@@ -23,7 +23,7 @@ My form
 		Скрипт по заданию 2
 	-->
 	<script>
-		document.getElementById("editNumId").onchange = function() {
+		document.getElementById("editNumId").oninput = function() {
 		//alert(this.value);
 			if (isNaN(this.value)) {
 				alert("Введите цифру, а не " + this.value);
